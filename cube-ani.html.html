@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Colorful Cube</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            perspective: 1000px;
+        }
+
+        .scene {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .cube {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(-45deg);
+            animation: rotate 10s infinite linear;
+        }
+
+        .face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #000;
+        }
+
+        .front {
+            transform: rotateY(0deg) translateZ(100px);
+            background-color: red;
+        }
+
+        .back {
+            transform: rotateY(180deg) translateZ(100px);
+            background-color: blue;
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(100px);
+            background-color: green;
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(100px);
+            background-color: yellow;
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(100px);
+            background-color: purple;
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+            background-color: orange;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateX(-30deg) rotateY(-45deg);
+            }
+            to {
+                transform: rotateX(-30deg) rotateY(315deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="cube">
+            <div class="face front">&nbsp;</div>
+            <div class="face back">&nbsp;</div>
+            <div class="face right">&nbsp;</div>
+            <div class="face left">&nbsp;</div>
+            <div class="face top">&nbsp;</div>
+            <div class="face bottom">&nbsp;</div>
+        </div>
+    </div>
+</body>
+</html>
